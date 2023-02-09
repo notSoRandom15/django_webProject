@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <h3>Actors in Movies </h3>
+
+    <table class='table table-bordered table-striped'>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+            <th>Release Year</th>
+            <th>Length in minutes</th>
+        </tr>
+        {% for actor in actors %}
+            <tr>
+                <td>{{actor.first_name}}</td>
+                <td>{{actor.last_name}}</td>
+                <td>{{actor.title}}</td>
+                <td>{{actor.release_year}}</td>
+                <td>{{actor.length}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}

@@ -1,0 +1,55 @@
+##### virtual env
+
+py -m venv .venv
+.\.venv\Scripts\activate
+# deactivate
+
+##### install django
+
+pip install django
+
+##### create project
+
+django-admin startproject <ProjectName>
+django-admin startproject <ProjectName> .
+
+##### run the empty web project
+
+py .\manage.py runserver
+.\manage.py runserver
+.\start.ps1
+.\start
+
+# or use F5 in VS Code or other IDEs
+
+# create one app in project
+
+py .\manage.py startapp app1
+
+### remember to configure in setttngs.py:
+
+INSTALLED_APPS = [
+    ....
+    'app1.apps.App1Config', # 'app1' for simplicity
+]
+
+###### next steps: Developing with:
+###### Models/Views/Templates/URLS
+
+# 1. configure urls
+# 2. create views
+# 3. from view return template
+# 4. define and use models
+
+
+#### create a migrations file
+py .\manage.py makemigrations posts
+py .\manage.py migrate
+
+#### create a superuser who can log in
+python manage.py createsuperuser
+User@123
+
+#### generate from DB:
+
+py .\manage.py inspectdb > models.py
